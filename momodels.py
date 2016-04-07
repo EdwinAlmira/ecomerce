@@ -8,7 +8,7 @@
 from __future__ import unicode_literals
 
 from django.db import models
-
+ #comment
 
 class Acciones(models.Model):
     id_accion = models.AutoField(primary_key=True)
