@@ -1,4 +1,5 @@
 from __future__ import unicode_literals
+from datetime import datetime
 
 from django.db import models
 from productos.models import Producto 
@@ -16,12 +17,12 @@ class Cliente(models.Model):
 
 	nombre = models.CharField(max_length=50)
 	apellido = models.CharField(max_length=50)
-	genero = models.CharField(max_length=9, blank=True, choices=generos)
+	genero = models.CharField(max_length=9, blank=True, choices=generos, default = 'M')
 	correo = models.CharField(unique=True, max_length=60)
 	telefono = models.CharField(unique=True, max_length=10)
 	contra = models.CharField(max_length=120)
-	ingreso = models.DateField()
-	estado = models.CharField(max_length=8, blank=False, choices=estados)
+	ingreso = models.DateField(auto_now_add = True, blank= True)
+	estado = models.CharField(max_length=8, blank=False, choices=estados, default = 'on')
 
 class Accion(models.Model):
 	acciones =(
@@ -56,5 +57,3 @@ class Comentario(models.Model):
 	estado = models.CharField(max_length=9, blank=True, choices=estados)
 	id_producto = models.ForeignKey(Producto, models.DO_NOTHING)
 	id_cliente = models.ForeignKey(Cliente, models.DO_NOTHING)
-
-

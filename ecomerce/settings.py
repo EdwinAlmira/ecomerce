@@ -88,7 +88,7 @@ DATABASES = {
         'NAME': 'rudejango',
         'USER': 'root',
         'PASSWORD': 'root',
-        'HOST': '192.168.33.100',   # Or an IP Address that your DB is hosted on
+        'HOST': '192.168.33.100', 
         'PORT': '3306',
     }
 }
