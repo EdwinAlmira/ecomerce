@@ -1,0 +1,145 @@
+
+body{
+	background-color: #2c3e50;
+}
+
+body {
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+/*Ajuste de tamaño de Encabezados*/
+h1{
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+
+}
+h4{
+     word-wrap: break-word;
+     -webkit-hyphens: auto;
+     -moz-hyphens: auto;
+     -ms-hyphens: auto;
+     -o-hyphens: auto;
+     hyphens: auto;
+
+}
+
+@media screen and (max-width: 768px) {
+    h1{
+        font-size:28px;
+    }
+}
+@media screen and (max-width: 768px) {
+    h4{
+        font-size:20px;
+    }
+}
+
+/*Nuestros proveedores*/
+/*Imagen del inicio*/
+.cabezera{
+	position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    opacity: 0.75;
+}
+.cabez{
+	background-color: #16a085;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    padding-bottom: 1px;
+    padding-top: 1px;
+}
+.negociando{
+	background-color: #7f8c8d;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.negociando2{
+	background-color: #bdc3c7;
+	color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+.vcenter {
+    margin-top: 75px;
+}
+@media screen and (max-width: 768px) {
+    .vcenter{
+         margin-top:50px;
+    }
+}
+@media screen and (max-width: 970px) {
+    .vcenter{
+         margin-top:50px;
+    }
+}
+
+/*Imagenes de las marcas*/
+.logosmarcas{
+	height: 70px;
+}
+
+/*Buttons*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+}
+.btn-hola:focus{
+	color: white;
+}
+
+/*Blog*/
+.blogback{
+ background-color: #ecf0f1;
+ box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+ padding: 0px;
+ color: black;
+}
+.blogback h1{
+    color: white;
+}
+.entrada{
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+footer {
+    margin-bottom: 0;
+    padding-bottom: 0;
+    display: block;
+    font-size: 15px;
+    color: white;
+}
+.afoot{
+    color: #95a5a6;
+    text-decoration: none;
+}
+.afoot:hover{
+    color: white;
+    text-decoration: underline;
+}
+
+
+/*Iconos*/
+.rede{
+    margin-left: 6px;
+    margin-right: 6px;
+}
+
+.creador{
+    width: 130px;
+    height: 175px;
+}
+/* ==========================================================================
+   Author's custom styles
+   ========================================================================== */
+Status API Training Shop Blog About Pricing
+© 2016 GitHub, Inc. Terms Privacy Security Contact Help

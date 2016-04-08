@@ -1,0 +1,130 @@
+/*-----------------Css for Main.php -----------------*/
+
+/*css para elementos mas comunes dentro del proyecto*/
+body{
+	padding: 0;
+	margin: 0;
+	background-color: #2c3e50;
+}
+section h3{
+	border:none;
+	color: #16a085;
+}
+section{
+	background-color: white;
+	color: black;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+section h2{
+	color: #16a085;
+}
+.navbar .navbar-header {
+   background-color: #34495e;
+   opacity: 0.75;
+	
+}
+
+a.linkeado{
+	color: white;
+}
+.typedcss{
+	font-family: 'Old Standard TT', serif;
+	color: white;
+	font-size: 50px;	
+}
+.navbar-fixed-top .navbar-nav > li > a {
+color: #ecf0f1;
+}
+.navbar-fixed-top .navbar-nav > li > a:hover {
+color: #1abc9c;
+}
+.navbar-fixed-top .navbar-nav > li > a:focus {
+color: #ecf0f1;
+}
+.navbar{
+	margin: 0px;
+}
+.mainTitle{
+	font-family: 'Old Standard TT', serif;
+	color:white;
+}
+.typed-cursor {
+    display: none;
+}
+.typed{
+	background-color: rgba(0,0,0,0.5);
+	border-radius: 1%;
+}
+.typed h2{;
+	color: white;
+	font-size: 30px;	
+}
+.h2question{
+	
+	color: white;
+	font-size: 35px;	
+}
+.pservice{
+	color: white;
+	font-size: 15px;	
+}
+.thumbnail{
+	border:none;
+
+}
+.thumbnail p{
+	color: black;
+}
+
+
+/*-------------------Medias queris----------*/
+@media screen and (min-width: 480px){
+	.typed{
+		margin-left: 2%;
+		margin-top: 35%;
+		position: absolute;
+		z-index: 1;
+	}
+}
+@media screen and (min-width: 767px){
+		.typed{
+		margin-left: 2%;
+		margin-top: 35%;
+		position: absolute;
+		z-index: 1;
+	}
+}
+footer {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	display: block;
+	font-size: 15px;
+	
+}
+/*diseño para footer css*/
+.afoot{
+	color: #95a5a6;
+	text-decoration: none;
+}
+.afoot:hover{
+	color: white;
+	text-decoration: underline;
+}
+/*Boton hola (boton prederminado)*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:active{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:focus{
+	color: white;
+}
+

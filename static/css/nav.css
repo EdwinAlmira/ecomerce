@@ -1,0 +1,57 @@
+/*Nav bar propiedades*/
+.loguito{
+	width: 150px;
+	height: 30px;
+}
+body{
+	background-color: #2c3e50;
+}
+
+.navbar {
+   background-color: #34495e;
+   opacity: 0.80;
+}
+.navbar-toggle{
+	background-color: white;
+}
+/*Colores de la letras del navbar*/
+.navbar-fixed-top .navbar-nav > li > a {
+color: #ecf0f1;
+}
+.navbar-fixed-top .navbar-nav > li > a:hover {
+color: #1abc9c;
+}
+.navbar-fixed-top .navbar-nav > li > a:focus {
+color: #ecf0f1;
+}
+.navbar-fixed-top .navbar-nav .dropdown-menu> li > a {
+color: #16a085;
+}
+.navbar-fixed-top .navbar-nav .dropdown-menu> li > a:hover {
+color: #1abc9c;
+}
+.navbar-fixed-top .navbar-nav .dropdown-menu> li > a:focus {
+color: #16a085;
+}
+
+footer{
+	color: white;
+}
+/*Boton hola (boton prederminado)*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:active{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:focus{
+	color: white;
+}
+

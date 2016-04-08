@@ -1,0 +1,80 @@
+/** Estilos para register.php  */
+
+section{
+	background-color: #F1F1F1;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+/** Estilos para el formulario del registro  */
+#loginbox{
+	margin-top:10px;
+}
+#login-alert{
+	display:none;
+}
+.panel-body{
+	padding-top:20px;
+}
+.input-group{
+	margin-bottom: 50px;
+}
+.glyphicon-user, .glyphicon-lock{
+	color: black;
+	background-color: white;
+}
+#title{
+	color: black;
+}
+.checkbox{
+	color: #CBCBCB;
+	font-size: 16px;
+}
+.form-control{
+	font-size: 14px;
+}
+/** Estilos para iconos y cartas en el regisro  */
+.glyphicon-email{
+	color: black;
+	font-size: 16px;
+	background-color: white;
+	font-weight:10px;
+}.thumbnail{
+	background-color:#E1E1E1;	
+	border:none;
+
+}
+.thumbnail p,h3{
+	color: balck;
+}
+label{
+	color: black;
+}
+/** Estilos para el footer.php  */
+footer {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	display: block;
+	font-size: 15px;
+	
+}
+.afoot{
+	color: #95a5a6;
+	text-decoration: none;
+}
+.afoot:hover{
+	color: white;
+	text-decoration: underline;
+}
+/*Boton hola (btn Predeterminado)*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:focus{
+	color: white;
+}

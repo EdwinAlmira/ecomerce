@@ -1,0 +1,99 @@
+<!--toma como plantilla base.html-->
+{% extends "base.html" %}
+
+<!--carga los archivos estaticos css,img,js...-->
+{% load staticfiles %}
+
+<!--establece el titulo a la pagina-->
+{% block titulo_pagina %}
+	{{ title }}
+{% endblock %}
+
+{% block estilos %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/mainEdwin.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}" />
+{% endblock %}
+
+{% block view %}
+	    <div class="container vcenter">
+      <div class="row">
+        <div class="blogback col-md-offset-1 col-md-10">
+          <div class="cabez"><br>
+            <h1 class="text-center">Formulario de Compra</h1><br>
+        </div>
+        <br>
+
+        <!--Tabla de precios-->
+
+        <table  class="table ">
+
+            <!-- Encabezado de tabla-->
+            <thead>
+                <tr>
+                    <th></th>
+                    <th>Producto</th>
+                    <th>Cantidad</th>
+                    <th></th>
+                    <th>$/U</th>
+                    <th>SubTotal</th>
+                </tr>
+            </thead>
+
+            <!-- Cuerpo de tabla-->
+            <tbody>
+                <tr>
+                    <td><a href="" class="iconomenos"><span class="glyphicon glyphicon-remove"></span></a></td>
+                    <td><a href=""  onClick="hideButton()" data-toggle="modal" data-target="#detalle"> Office 365</a></td>
+                    <td>1</td>
+                    <td>
+                        <a href="" class="iconomenos"><span class="glyphicon glyphicon-minus"></span></a>
+                        <a href="" class="iconomas"><span class="glyphicon glyphicon-plus"></span></a>
+                    </td>
+                    <td>$9.99</td>
+                    <td>$9.99</td>
+                </tr>
+                <tr>
+                    <td><a href="" class="iconomenos"><span class="glyphicon glyphicon-remove"></span></a></td>
+                    <td><a href="">Nod 32</a></td>
+                    <td>1</td>
+                    <td>
+                        <a href="" class="iconomenos"><span class="glyphicon glyphicon-minus"></span></a>
+                        <a href="" class="iconomas"><span class="glyphicon glyphicon-plus"></span></a>
+                    </td>
+                    <td>$12.99</td>
+                    <td>$12.99</td>
+                </tr>
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><strong>Total</strong></td>
+                    <td>$21.98</td>
+                </tr>
+
+                <!--Botones de compra y cancelar -->
+                <tr>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-hola" onClick="cancelar()">Comprar</button><button class="btn btn-hola hidden-xs  col-sm-offset-1" onClick="comprar()">Cancelar</button></td>
+                </tr>
+                <tr class=" hidden-sm hidden-md hidden-lg">
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td></td>
+                    <td><button class="btn btn-hola" onClick="">Cancelar</button></td>
+                </tr>
+            </tbody>
+        </table>
+{% endblock %}
+{% block archivos_js %}
+	<script src="{% static 'js/products.js' %}"></script>	
+{% endblock %}
+
+

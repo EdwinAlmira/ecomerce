@@ -1,0 +1,71 @@
+
+section{
+	background-color: #F1F1F1;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/*+Css para el el formulario de inicio de sesion y registro+*/
+#loginbox{
+	margin-top:1px;
+}
+#login-alert{
+	display:none;
+}
+.panel-body{
+	padding-top:20px;
+}
+.input-group{
+	margin-bottom: 20px;
+}
+.glyphicon-user, .glyphicon-lock{
+	color: black;
+	background-color: white;
+}
+#title{
+	color: black;
+}
+.checkbox{
+	color: black;
+	font-size: 16px;
+}
+.form-control{
+	font-size: 14px;
+}
+/*rediseño de los cartas de servicios*/
+.thumbnail{
+	background-color:#E1E1E1;	
+	border:none;
+
+}
+.thumbnail p,h3{
+	color: balck;
+}
+
+/*Estilos del footer*/
+footer {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	display: block;
+	font-size: 15px;
+	
+}
+.afoot{
+	color: #95a5a6;
+	text-decoration: none;
+}
+.afoot:hover{
+	color: white;
+	text-decoration: underline;
+}
+/*Boton hola(btn predeterminado)*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:focus{
+	color: white;
+}

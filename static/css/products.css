@@ -1,0 +1,120 @@
+/** Estilos para productos.php  */
+#principalP
+{
+	margin-top: 100px;
+	
+}
+/** estilos para el footer*/
+footer {
+	margin-bottom: 0;
+	padding-bottom: 0;
+	display: block;
+	font-size: 15px;
+	
+}
+.afoot{
+	color: #95a5a6;
+	text-decoration: none;
+}
+.afoot:hover{
+	color: white;
+	text-decoration: underline;
+}
+section{
+	background-color: white;
+	box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+/** Estilos para nav.php  */
+.nav-pills > li.active > a,
+.nav-pills > li.active > a:hover,
+.nav-pills > li.active > a:focus {
+  color: #fff;
+  background-color: #16a085;
+}
+
+.nav-pills > li > a {
+  color: #16a085;
+  background-color: #fff;
+}
+/*Boton hola (btn predeterminado)*/
+.btn-hola{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+.btn-hola:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:active{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola:focus{
+	color: white;
+}
+
+/** para el boton de añadir al carrito  */
+.btn-hola-carrito{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+
+.btn-hola-carrito:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola-carrito:active{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola-carrito:focus{
+	color: white;
+}
+.btn-hola-carrito-active{
+	background-color: #3498db;
+	color: white;
+}
+
+.btn-hola-carrito2{
+	transition: background-color 0.5s ease;
+	background-color: #16a085;
+	color: white;
+}
+
+.btn-hola-carrito2:hover{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola-carrito2:active{
+	background-color: #3498db;
+	color: white;
+}
+.btn-hola-carrito2:focus{
+	color: white;
+}
+.btn-hola-carrito2-active{
+	background-color: #3498db;
+	color: white;
+}
+/** Estilos para las estrellas en el detalle.php  */
+.reviews{
+    cursor: hand;
+    color:#D7AC13;
+    font-size: 25px;
+}
+.reviews2{
+    cursor: hand;
+ 
+    font-size: 15px;
+}
+
+.reviews2:hover{
+	   color:#D7AC13;	    
+}
+
+/*margenes de modal*/
+.rede{
+	margin-left: 10px;
+}
