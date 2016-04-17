@@ -30,7 +30,7 @@
         </div>
         <div id="loginbox" class="col-xs-12 col-md-6 col-md-offset-3 col-lg-6 col-lg-offset-0">
           <h2 id="title" class="text-center">Registrarme</h2>
-          <form id="loginform" role="form">
+          <form id="loginform" role="form" method="POST">
               {% csrf_token %}
             <form role="form">
               <div class="form-group">
@@ -57,12 +57,14 @@
                 <label for="pwd">Contraseña</label>
                 {{ form.contra }}
               </div>
+              {{ form.ingreso }}
+              {{ form.estado }} 
               <div class="checkbox">
                 <label><input type="checkbox">¡Sé el primero en conocer las mejores ofertas!</label>
               </div>
               <div  class="form-group">
                 <div class="col-sm-12 controls">
-                  <button class="btn btn-hola center-block">Registrame</button>
+                  <button type="submit" class="btn btn-hola center-block">Registrame</button>
                 </div>
                 <br>
                 <br>

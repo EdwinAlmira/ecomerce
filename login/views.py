@@ -21,9 +21,9 @@ def singin(request):
     if request.method == 'POST':
         form = Registrarme(request.POST, request.FILES)
         if form.is_valid():
-            cliente = form.save()
-            cliente = save()
-            return HttpResponseRedirect('/login')
+            usuario = form.save()
+            usuario.save()
+            return HttpResponseRedirect('/')
     else:
         form = Registrarme
 
