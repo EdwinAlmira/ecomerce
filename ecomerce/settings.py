@@ -32,6 +32,7 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     'compra.apps.CompraConfig',
+    'dashboard.apps.DashboardConfig',
     'cliente.apps.ClienteConfig',
     'login.apps.LoginConfig',
     'blog.apps.BlogConfig',
@@ -44,6 +45,8 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
 ]
+AUTH_USER_MODEL = 'login.MyUser'
+
 
 MIDDLEWARE_CLASSES = [
     'django.middleware.security.SecurityMiddleware',
@@ -85,7 +88,7 @@ WSGI_APPLICATION = 'ecomerce.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql', 
-        'NAME': 'rudejango',
+        'NAME': 'ecomerce',
         'USER': 'root',
         'PASSWORD': 'root',
         'HOST': '192.168.33.100', 
@@ -125,6 +128,8 @@ USE_I18N = True
 USE_L10N = True
 
 USE_TZ = True
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/dashboard/'
 
 
 # Static files (CSS, JavaScript, Images)

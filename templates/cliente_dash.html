@@ -1,0 +1,20 @@
+<!--toma como plantilla base.html-->
+{% extends "dash.html" %}
+
+<!--carga los archivos estaticos css,img,js...-->
+{% load staticfiles %}
+
+<!--establece el titulo a la pagina-->
+{% block title %}
+	{{ title }}
+{% endblock %}
+
+{% block view %}
+<h1>cliente: {{ client }}</h1>
+		{% if user.is_authenticated %}
+	 <a href="{% url "userprofiles:logout" %}">logout</a>
+            {{ user.email }}
+        {% else %}
+            <a href="{% url "login:login" %}">login</a>
+        {% endif %}
+{% endblock %}

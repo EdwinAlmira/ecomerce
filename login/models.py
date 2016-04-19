@@ -1,8 +1,70 @@
 from __future__ import unicode_literals
+from django.db import models
+from cliente.models import Accion, Cliente
 
 from django.db import models
-from cliente.models import Accion
+from django.contrib.auth.models import (
+    BaseUserManager, AbstractBaseUser
+)
 
+
+class MyUserManager(BaseUserManager):
+    def create_user(self, email, is_personal, password=None):
+        if not email:
+            raise ValueError('Users must have an email address')
+        user = self.model(
+            email=self.normalize_email(email),
+            is_personal=is_personal,
+        )
+        user.set_password(password)
+        user.save(using=self._db)
+        return user
+
+    def create_superuser(self, email, is_personal, password):
+        user = self.create_user(email,
+            password=password,
+            is_personal=is_personal
+        )
+        user.is_admin = True
+        user.save(using=self._db)
+        return user
+
+class MyUser(AbstractBaseUser):
+    email = models.EmailField(
+        verbose_name='email address',
+        max_length=255,
+        unique=True,
+    )
+    is_personal = models.BooleanField(default=True)
+    is_active = models.BooleanField(default=True)
+    is_admin = models.BooleanField(default=False)
+    objects = MyUserManager()
+    USERNAME_FIELD = 'email'
+    REQUIRED_FIELDS = ['is_personal']
+
+    def get_full_name(self):
+        # The user is identified by their email address 
+        return self.email
+    def get_short_name(self):
+        # The user is identified by their email address
+        return self.email
+
+    def __str__(self):              # __unicode__ on Python 2
+        return self.email
+    def has_perm(self, perm, obj=None):
+        "Does the user have a specific permission?"
+        # Simplest possible answer: Yes, always
+        return True
+    def has_module_perms(self, app_label):
+        "Does the user have permissions to view the app `app_label`?"
+        # Simplest possible answer: Yes, always
+        return True
+
+    @property
+    def is_staff(self):
+        "Is the user a member of staff?"
+        # Simplest possible answer: All admins are staff
+        return self.is_admin
 class Modulo(models.Model):
 	nombre = models.CharField(unique=True, max_length=50)
 
@@ -24,7 +86,6 @@ class PersonalAdministrativo(models.Model):
 	correo = models.CharField(unique=True, max_length=60)
 	telefono = models.CharField(unique=True, max_length=10)
 	nacimiento = models.DateField()
-	contra = models.CharField(max_length=120)
 	foto = models.ImageField(blank = True, upload_to= 'img_personal', default = 'img_personal/no-img.jpg')
 	id_permiso = models.ForeignKey(Permiso, models.DO_NOTHING)
 

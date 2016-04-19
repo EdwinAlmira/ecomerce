@@ -20,7 +20,6 @@ class Cliente(models.Model):
 	genero = models.CharField(max_length=9, blank=True, choices=generos, default = 'M')
 	correo = models.CharField(unique=True, max_length=60)
 	telefono = models.CharField(unique=True, max_length=10)
-	contra = models.CharField(max_length=120)
 	ingreso = models.DateField(auto_now_add = True, blank= True)
 	estado = models.CharField(max_length=8, blank=False, choices=estados, default = 'on')
 
