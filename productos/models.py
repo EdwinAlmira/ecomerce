@@ -5,10 +5,14 @@ from django.db import models
 # categorias para los producros
 class Categoria(models.Model):
 	nombre = models.CharField(unique=True, max_length=50)
-	img = models.ImageField(blank = True, upload_to= 'img_productos', default = 'img_productos/no-img.jpg')
+	def __str__(self):
+		return self.nombre
 # proveedores de los productos
 class Proveedor(models.Model):
 	nombre = models.CharField(max_length=50, null= False, unique=True)
+	imagen = models.ImageField(blank = True, upload_to= 'img_proveedores', default = 'img_proveedores/no-img.jpg')
+	def __str__(self):
+		return self.nombre
 
 # modelo productos
 class Producto(models.Model):
