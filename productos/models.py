@@ -2,13 +2,15 @@ from __future__ import unicode_literals
 
 from django.db import models
 
+# categorias para los producros
 class Categoria(models.Model):
 	nombre = models.CharField(unique=True, max_length=50)
 	img = models.ImageField(blank = True, upload_to= 'img_productos', default = 'img_productos/no-img.jpg')
-
+# proveedores de los productos
 class Proveedor(models.Model):
 	nombre = models.CharField(max_length=50, null= False, unique=True)
 
+# modelo productos
 class Producto(models.Model):
 	nombre = models.CharField(max_length=50)
 	precio_unitario = models.DecimalField(max_digits=6, decimal_places=2)
@@ -17,6 +19,7 @@ class Producto(models.Model):
 	id_proveedor = models.ForeignKey(Proveedor, models.DO_NOTHING)
 	id_categoria = models.ForeignKey(Categoria, models.DO_NOTHING)
 
+# alamcen lleva un inventario de los productos
 class Almacen(models.Model):
     cantidad = models.IntegerField()
     vendidos = models.IntegerField()

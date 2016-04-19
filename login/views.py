@@ -4,27 +4,30 @@ from django.template import loader
 from django.contrib.auth import authenticate
 from django.contrib.auth import login as auth_login
 
-# se importan el modelo y el formulario
-
+# importa el modelo del cliente y el de autentifiacion(MyUser)
 from cliente.models import Cliente
 from login.models import MyUser
+
+# importa el formulario para registrar un cliente
 from .forms import Registrarme
 
-def sample_view(request):
-    current_user = request.user
-    print current_user.id
-# funcion login devuelve la vista login
+# funcion para autentificar a los usuarios
 def login(request):
     if request.method == 'POST':
-        
+
+        #Obtiene la password y correo del usuario
         email = request.POST.get('email', None)
         password = request.POST.get('password', None)
-        print email,password
+        
+        #Intenta autentificarse con el modelo de MyUser
         user = authenticate(email=email, password=password)
+
+        #una vez se verifica el usuario, inicia sesion
         auth_login(request, user)
+        # redirecciona al dashboard, el cual identificara el tipo de usuario
         return redirect('/dashboard/')
     else:
-        sample_view(request)
+        #Peticion para cargar la vista
         template = loader.get_template("login.html")
         contex = {
         'title': 'Agregar Cliente',
@@ -35,32 +38,34 @@ def login(request):
 # funcion para registrar un nuevo cliente
 def singin(request):
     if request.method == 'POST':
+        # Se crea un formulario y se rellena con el request
         form = Registrarme(request.POST, request.FILES)
+
+        #se validan los datos del formulario
         if form.is_valid():
             
+            #se obtiene el correo y contra para ser registrados en los usaurios
             email = request.POST.get('correo', None)
             password = request.POST.get('password', None)
             print password
             is_personal = False
+
+            # se guarda el usuario tipo cliente en el modelo MyUser
             user = MyUser.objects.create_user(email=email,is_personal=is_personal, password=password)
             user.save()
-            usuario = form.save()
-            usuario.save()
+
+            # se registra el cliente en el modelo cliente
+            nuevo_cliente = form.save()
+            nuevo_cliente.save()
+
             return HttpResponseRedirect('/')
     else:
+        # peticion para la vista se obtiene el formulario
         form = Registrarme
-
+    # se envia el formulario a la vista
     template = loader.get_template("singin.html")
     contex = {
         'title' : 'Registrarme',
         'form' : form
     }
     return HttpResponse(template.render(contex,request))
-    
-
-    """template = loader.get_template('singin.html')
-    title = 'Registrarme'
-    context = {
-        'title': title
-    }
-    return HttpResponse(template.render(context, request))"""

@@ -2,6 +2,7 @@ from django.http import HttpResponse
 from django.template import loader
 from django.shortcuts import render
 
+# definimos una funcion para obtener una vista en el frontend
 def index(request):
     template = loader.get_template('index.html')
     title = 'Inicio'

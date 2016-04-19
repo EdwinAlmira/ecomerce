@@ -1,4 +1,4 @@
-<!--toma como plantilla base.html-->
+<!--toma como plantilla dash.html-->
 {% extends "dash.html" %}
 
 <!--carga los archivos estaticos css,img,js...-->
@@ -9,6 +9,7 @@
 	{{ title }}
 {% endblock %}
 
+<!---introduce el contenido en una view -->
 {% block view %}
 		<h1>welcome admin: {{ name }}</h1>
 		{% if user.is_authenticated %}
