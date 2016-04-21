@@ -3,20 +3,18 @@
 
 <!--establece el titulo a la pagina-->
 {% block title %}
-	Agregar Proveedor
+	Agregar permiso por Modulo
 {% endblock %}
 
 {% block dashview %}
 	<form method="POST" enctype="multipart/form-data">
 	{% csrf_token %}
-	<h3>Agregar Proveedor</h3>
+	<h3>Agregar Permiso por modulo</h3>
 	<div class="form-group col-xs-4">
-		{{ form.nombre }}
-		<div class="fileUpload btn btn-hola">
-    <span>Agregar Imagen</span>
-		{{ form.imagen }}
-		</div>
-
+		{{ form.id_permiso }}
+	</div>
+	<div class="form-group col-xs-4">
+		{{ form.id_modulo }}
 	</div>
 	<div class="form-group ">
 		<button class="btn btn-hola" type="submit"> Añadir</button>		

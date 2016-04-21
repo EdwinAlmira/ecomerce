@@ -1,0 +1,56 @@
+{% extends "admin_dash.html" %}
+{% load staticfiles %}
+
+<!--establece el titulo a la pagina-->
+{% block title %}
+	Modificar Personal
+{% endblock %}
+
+{% block dashview %}
+	<form method="POST" enctype="multipart/form-data">
+	{% csrf_token %}
+	<h3>Modificar Personal</h3>
+	<div class="form-group col-xs-4">
+		<div class="form-group">
+            <label for="">Nombre</label>
+            {{ form.nombre }}
+         </div>
+         <div class="form-group">
+            <label for="">Apellido</label>
+            {{ form.apellido }}
+         </div>
+          <div class="form-group">
+            <label for="">Genero</label>
+            {{ form.genero }}
+         </div>
+          <div class="form-group">
+            <label for="">Telefono</label>
+            {{ form.telefono }}
+         </div>
+          <div class="form-group">
+            <label for="">Nacimiento</label>
+            {{ form.nacimiento }}
+         </div>
+          <div class="form-group">
+            <label for="">Correo</label>
+            {{ form.correo}}
+         </div>
+          <div class="form-group">
+            <label for="">Permiso</label>
+            {{ form.id_permiso}}
+         </div>
+          <div class="form-group">
+            <label for="">Contraseña</label>
+            {{ form.contra}}
+         </div>
+	
+	<div class=" fileUpload btn btn-hola">
+	    <span>Cambiar Imagen</span>
+			{{ form.foto }}
+	</div>
+	<button class="btn btn-hola" type="submit"> Modificar</button>	
+	
+	</div>
+	
+</form>
+{% endblock %}

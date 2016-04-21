@@ -8,14 +8,86 @@
 {% block title %}
 	{{ title }}
 {% endblock %}
-
+	
+{% block css_files %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.min.css' %}" />
+	<link rel="stylesheet" type="text/css" href="{% static 'css/dash.css' %}" />
+{% endblock %}
 <!---introduce el contenido en una view -->
 {% block view %}
-		<h1>welcome admin: {{ name }}</h1>
-		{% if user.is_authenticated %}
-	 <a href="{% url "userprofiles:logout" %}">logout</a>
-            {{ user.email }}
-        {% else %}
-            <a href="{% url "login:login" %}">login</a>
-        {% endif %}
+	<div class="header">
+	     <div class="container">
+	        <div class="row">
+	           <div class="col-md-5">
+	              <!-- Logo -->
+	              <div class="logo">
+	                 <h1><a href="index.html">Dashboard Rudeware</a></h1>
+	              </div>
+	           </div>
+	           <div class="col-md-5">
+	              <div class="row">
+	                <div class="col-lg-12">
+	                </div>
+	              </div>
+	           </div>
+	           <div class="col-md-2">
+	              <div class="navbar navbar-inverse" role="banner">
+	                  <nav class="collapse navbar-collapse bs-navbar-collapse navbar-right" role="navigation">
+	                    <ul class="nav navbar-nav">
+	                      <li class="dropdown">
+	                        <a href="#" class="dropdown-toggle" data-toggle="dropdown">Mi cuenta <b class="caret"></b></a>
+	                        <ul class="dropdown-menu animated fadeInUp">
+	                         <li>{{ name }}</li>
+	                          <li><a href="profile.html">Perfil</a></li>
+	                          <li>{% if user.is_authenticated %}
+	 							<a href="{% url "userprofiles:logout" %}">cerrar sesion</a>
+        						{% endif %}</li>
+	                        </ul>
+	                      </li>
+	                    </ul>
+	                  </nav>
+	              </div>
+	           </div>
+	        </div>
+	     </div>
+	</div>
+        <div class="page-content">
+    	<div class="row">
+		  <div class="col-md-2">
+		  	<div class="sidebar content-box" style="display: block;">
+                <ul class="nav">
+                    <!-- Main menu -->
+                    <li class="current"><a href="index.html"><i class="glyphicon glyphicon-home"></i> Dashboard</a></li>
+                    <li><a href="/dashboard/categorias"><i class="glyphicon glyphicon-calendar"></i> Categorias</a></li>
+                    <li><a href="/dashboard/proveedores"><i class="glyphicon glyphicon-stats"></i> Proveedores</a></li>
+                    <li><a href="/dashboard/productos"><i class="glyphicon glyphicon-list"></i> Productos</a></li>
+                    <li><a href="/dashboard/clientes/"><i class="glyphicon glyphicon-record"></i> Clientes</a></li>
+                    <li><a href="editors.html"><i class="glyphicon glyphicon-pencil"></i>Acceso</a></li>
+
+                    <li><a href="forms.html"><i class="glyphicon glyphicon-tasks"></i> Forms</a></li>
+                    <li class="submenu">
+                         <a href="#">
+                            <i class="glyphicon glyphicon-list"></i> Usuarios
+                            <span class="caret pull-right"></span>
+                         </a>
+                         <!-- Sub menu -->
+                         <ul>
+                         	<li><a href="/dashboard/usuarios/">Personal</a></li>
+                            <li><a href="/dashboard/permisos/">Permisos</a></li>
+                            <li><a href="/dashboard/acceso/">Acceso</a></li>
+                        </ul>
+                    </li>
+                </ul>
+             </div>
+		  </div>
+		  <div class="col-md-10">
+		  	{% block dashview %}
+		  	{% endblock%}
+		  </div>
+		</div>
 {% endblock %}
+{% block js_files %}
+ 	 <script src="{% static 'js/jquery-1.11.2.min.js' %}"></script>
+ 	 <script src="{% static 'js/bootstrap.js' %}"></script>
+	 <script src="{% static 'js/dash.js' %}"></script>
+{%  endblock %}

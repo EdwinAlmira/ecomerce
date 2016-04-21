@@ -7,7 +7,7 @@ urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^', include('principal.urls')),
     url(r'^', include('login.urls', namespace ='login')),
-    url(r'^', include('productos.urls')),
+    url(r'^', include('productos.urls', namespace = 'productos')),
     url(r'^', include('cliente.urls')),
     url(r'^', include('dashboard.urls', namespace='userprofiles'),),
     url(r'^noticias', include('blog.urls')),    

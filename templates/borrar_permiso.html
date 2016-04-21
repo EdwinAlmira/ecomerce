@@ -1,0 +1,17 @@
+
+
+{% extends "admin_dash.html" %}
+{% load staticfiles %}
+
+<!--establece el titulo a la pagina-->
+{% block title %}
+	Eliminar Permiso
+{% endblock %}
+
+{% block dashview %}
+	<h3>Eliminar Permiso</h3>
+	<form method="post">{% csrf_token %}
+    <h5>¿Estás seguro que deseas borrar el Permiso "{{ object }}"?</h5>
+    <input  class="btn btn-hola" type="submit" value="Eliminar" />
+	</form>
+{% endblock %}
