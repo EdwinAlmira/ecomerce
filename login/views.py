@@ -66,7 +66,7 @@ class UsuariosList(AdminAndPermisoRequiredMixin,ListView):
         return context
 
 # Vista generica para crear un  usuario administrador
-class UsuarioCreation(AdminAndPermisoRequiredMixin,CreateView):
+class UsuarioCreation(CreateView):
     form_class = admin
     template_name = 'agregar_usuario.html'
     model = PersonalAdministrativo
@@ -265,7 +265,7 @@ def login(request):
         #Peticion para cargar la vista
         template = loader.get_template("login.html")
         contex = {
-        'title': 'Agregar Cliente',
+        'title': 'Iniciar Sesion',
         
         }
         return HttpResponse(template.render(contex,request))
@@ -294,7 +294,12 @@ def singin(request):
             nuevo_cliente = form.save()
             nuevo_cliente.save()
 
-            return HttpResponseRedirect('/')
+             #Obtiene la password y correo del usuario
+            new_user = authenticate(email=email, password=password)
+
+            #una vez se verifica el usuario, inicia sesion
+            auth_login(request, new_user)
+            return HttpResponseRedirect('/login/')
     else:
         # peticion para la vista se obtiene el formulario
         form = Registrarme

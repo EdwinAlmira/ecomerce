@@ -20,17 +20,18 @@ def create_newadmin(sender, instance, created, **kwargs):
     is_personal = True
 
     # intentamos selecionar el usuario
-    user = MyUser.objects.get(id_user=id_user)
-    if not user:
-        # si no existe se guarda el usuario en el modelo MyUser
-        user = MyUser.objects.create_user(
-            email=correo,
-            is_personal=is_personal,
-            id_user = id_user,
-            password=contra
-            )
-        user.save()
-     
+    try:
+        user = MyUser.objects.get(id_user=id_user)
+    except:
+            # si no existe se guarda el usuario en el modelo MyUser
+            user = MyUser.objects.create_user(
+                email=correo,
+                is_personal=is_personal,
+                id_user = id_user,
+                password=contra
+                )
+            user.save()
+         
 
 # Administrador de usuarios del sistema
 class MyUserManager(BaseUserManager):
